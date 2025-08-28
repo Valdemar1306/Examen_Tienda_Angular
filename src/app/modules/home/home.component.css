@@ -1,0 +1,18 @@
+.calendar{
+    text-transform: capitalize !important;
+}
+::ng-deep .dark-modal .modal-content{ 
+    background-color: black !important;
+}
+.update{
+    position: absolute;
+    top: 2%;
+    right: 1em;
+    border-radius: 2em;
+    color: white;
+    text-transform: uppercase;
+    padding: 0.5em 1em;
+}
+.tamaño-multimedia{
+    width: 100%;
+}

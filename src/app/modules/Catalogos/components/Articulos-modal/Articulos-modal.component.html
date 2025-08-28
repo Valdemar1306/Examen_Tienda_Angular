@@ -1,0 +1,130 @@
+<h1 mat-dialog-title>{{ data ? "Editar Articulo" : "Nuevo Articulo" }}</h1>
+<div mat-dialog-content>
+  <div class="row mb-2">
+    <div class="col-12">
+      <div class="table-section">
+        <form [formGroup]="form" class="margenes">
+          <div class="row mb-2">
+            <div class="col-md-12">
+              <div class="col-md-12 label-form">
+                <div class="col-md-4 label-text">Nombre</div>
+                <mat-form-field appearance="fill" class="w-full">
+                  <input
+                    matInput
+                    formControlName="nombre"
+                    class="form-control m-input"
+                  />
+                </mat-form-field>
+              </div>
+            </div>
+          </div>
+
+          <div class="row mb-2">
+            <div class="col-md-12">
+              <div class="col-md-12 label-form">
+                <div class="col-md-4 label-text">Codigo</div>
+                <mat-form-field appearance="fill" class="w-full">
+                  <input
+                    matInput
+                    formControlName="codigo"
+                    class="form-control m-input"
+                  />
+                </mat-form-field>
+              </div>
+            </div>
+          </div>
+
+          <div class="row mb-2">
+            <div class="col-md-12">
+              <div class="col-md-12 label-form">
+                <div class="col-md-4 label-text">Descripcion</div>
+                <mat-form-field appearance="fill" class="w-full">
+                  <input
+                    matInput
+                    formControlName="descripcion"
+                    class="form-control m-input"
+                  />
+                </mat-form-field>
+              </div>
+            </div>
+          </div>
+
+          <div class="row mb-2">
+            <div class="col-md-12">
+              <div class="col-md-12 label-form">
+                <div class="col-md-4 label-text">Precio</div>
+                <mat-form-field appearance="fill" class="w-full">
+                  <input
+                    type="number"
+                    matInput
+                    formControlName="precio"
+                    class="form-control m-input"
+                  />
+                </mat-form-field>
+              </div>
+            </div>
+          </div>
+
+          <div class="row mb-2">
+            <div class="col-md-12">
+              <div class="col-md-12 label-form">
+                <div class="col-md-4 label-text">Imagen</div>
+                <mat-form-field appearance="fill" class="w-full">                  
+                  <input
+                    type="file"
+                    (change)="onFileSelected($event)"
+                    accept="image/*"
+                    class="form-control m-input"
+                    />
+                  <span *ngIf="urlImagen!=''">Imagen Actual Seleccionada: {{urlImagen.replace("/imagenes/","")}}</span>
+                </mat-form-field>
+              </div>
+            </div>
+          </div>
+
+          <div class="row mb-2">
+            <div class="col-md-12">
+              <div class="col-md-12 label-form">
+                <div class="col-md-4 label-text">Stock</div>
+                <mat-form-field appearance="fill" class="w-full">
+                  <input
+                    type="number"
+                    matInput
+                    formControlName="stock"
+                    class="form-control m-input"
+                  />
+                </mat-form-field>
+              </div>
+            </div>
+          </div>
+
+          <div class="row mb-2">
+            <div class="col-md-12">
+              <div class="col-md-12 label-form">
+                <div class="col-md-4 label-text">Tienda</div>
+                <select2 [data]="tiendas2"
+                formControlName="idTienda"
+                >
+                </select2>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<div mat-dialog-actions align="end" class="footer-modal">
+  <button type="button" mat-button (click)="dialogRef.close()" color="basic">
+    Cancelar
+  </button>
+  <button
+    type="submit"
+    mat-button
+    color="primary"
+    (click)="onSave()"
+    class="btn-editar"
+  >
+    Guardar
+  </button>
+</div>

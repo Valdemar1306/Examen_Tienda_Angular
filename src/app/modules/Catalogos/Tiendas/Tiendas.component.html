@@ -1,0 +1,56 @@
+<div id="content" class="app-content">
+  <div class="row">
+    <div class="col-md-12">
+      <h1 class="page-header">Tiendas</h1>
+    </div>
+  </div>
+<div class="row">
+<div class="col-12">
+
+<mat-card class="Tiendas-card mb-2">
+  <mat-card-header>
+    </mat-card-header>
+
+  <mat-card-content>
+    <div class="acciones">
+      <button mat-raised-button color="primary" (click)="addTienda()" class="btn-ver">
+        Agregar Tienda
+      </button>
+    </div>
+
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+      <!-- Sucursal -->
+      <ng-container matColumnDef="sucursal">
+        <th mat-header-cell *matHeaderCellDef> Sucursal </th>
+        <td mat-cell *matCellDef="let element"> {{element.sucursal}} </td>
+      </ng-container>
+
+      <!-- Dirección -->
+      <ng-container matColumnDef="direccion">
+        <th mat-header-cell *matHeaderCellDef> Dirección </th>
+        <td mat-cell *matCellDef="let element"> {{element.direccion}} </td>
+      </ng-container>
+      
+
+      <!-- Acciones -->
+      <ng-container matColumnDef="acciones">
+        <th mat-header-cell *matHeaderCellDef> Acciones </th>
+        <td mat-cell *matCellDef="let element">
+          <button mat-icon-button color="primary" (click)="editTienda(element)">
+            <mat-icon>edit</mat-icon>
+          </button>
+          <button mat-icon-button color="warn" (click)="deleteTienda(element.idTienda)">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </mat-card-content>
+</mat-card>
+</div>
+</div>
+</div>

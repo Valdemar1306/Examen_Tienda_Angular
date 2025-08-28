@@ -1,0 +1,20 @@
+@import '../../../../app.component.scss';
+.page-header {
+    margin: 10px 30px !important;
+}
+
+::ng-deep mat-form-field {
+    .mat-mdc-form-field-subscript-wrapper {
+        display: none !important;
+    }
+
+    .mdc-text-field--no-label:not(.mdc-text-field--outlined):not(.mdc-text-field--textarea) .mat-mdc-form-field-infix {
+        padding: 0px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-content: center;
+        justify-content: center;
+        align-items: center;
+    }
+}

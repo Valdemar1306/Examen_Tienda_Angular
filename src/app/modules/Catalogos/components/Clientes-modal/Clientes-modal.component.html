@@ -1,0 +1,51 @@
+<h1 mat-dialog-title>{{ data ? "Editar Cliente" : "Nuevo Cliente" }}</h1>
+<div mat-dialog-content>
+  <div class="row mb-2">
+    <div class="col-12">
+      <div class="table-section">
+        <form [formGroup]="form" class="margenes">
+          <div class="row mb-2">
+            <div class="col-md-12">
+              <div class="col-md-12 label-form">
+                <div class="col-md-4 label-text">Nombre</div>
+                <mat-form-field appearance="fill" class="w-full">
+                  
+                  <input matInput formControlName="nombre" class="form-control m-input"/>
+                </mat-form-field>
+              </div>
+            </div>
+          </div>
+
+          <div class="row mb-2">
+            <div class="col-md-12">
+              <div class="col-md-12 label-form">
+                <div class="col-md-4 label-text">Apellidos</div>
+                <mat-form-field appearance="fill" class="w-full">
+                  
+                  <input matInput formControlName="apellidos" class="form-control m-input"/>
+                </mat-form-field>
+              </div>
+            </div>
+          </div>
+
+          <div class="row mb-2">
+            <div class="col-md-12">
+              <div class="col-md-12 label-form">
+                <div class="col-md-4 label-text">Dirección</div>
+                <mat-form-field appearance="fill" class="w-full">
+                  
+                  <input matInput formControlName="direccion" class="form-control m-input"/>
+                </mat-form-field>
+              </div>
+            </div>
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<div mat-dialog-actions align="end" class="footer-modal">
+  <button type="button" mat-button (click)="dialogRef.close()" color="basic">Cancelar</button>
+  <button type="submit" mat-button color="primary" (click)="onSave()" class="btn-editar">Guardar</button>
+</div>

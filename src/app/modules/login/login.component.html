@@ -1,0 +1,29 @@
+<div class="main-content">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="wrapper fadeInDown">
+        <div id="formContent">
+          <!-- Tabs Titles -->
+
+          <!-- Icon -->
+          <div class="fadeIn first" style="margin: 10%">
+            <img src="/assets/img/user/imagesuser.png" id="icon" alt="User Icon" />
+          </div>
+
+          <!-- Login Form -->
+          <form (ngSubmit)="login()">
+            <input type="text" id="login" class="fadeIn second" name="login" placeholder="Correo" [(ngModel)]="usuario">
+            <input type="password" id="password" class="fadeIn third" name="login" placeholder="Contraseña" [(ngModel)]="pass">
+            <input type="submit" class="fadeIn fourth" style="background-color: rgb(207, 33, 33);" value="Ingresar">
+          </form>
+
+          <!-- Remind Passowrd -->
+          <div id="formFooter">
+            <!-- <a class="underlineHover">Se te olvidó la contraseña?</a> -->
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
